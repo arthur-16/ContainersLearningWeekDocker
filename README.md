@@ -18,7 +18,7 @@ https://app.datadoghq.com/account/settings/agent/latest?platform=docker
 
 We'll be downloading Docker Desktop
 ```
-[https://kubernetes.io/docs/tasks/tools/#kubectl](https://docs.docker.com/desktop/install/mac-install/)
+https://docs.docker.com/desktop/install/mac-install/
 ```
 
 ### Other Essentials
