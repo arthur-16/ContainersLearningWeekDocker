@@ -27,7 +27,7 @@ We'll be downloading Docker Desktop
 
 Reference: https://app.datadoghq.com/account/settings/agent/latest?platform=docker
 
-I've generated a pre-built command below:
+#### I've generated a pre-built command below:
 ```
 docker run -d --name dd-agent \
 -e DD_API_KEY=c797c477e85d050512e243d46d3b5c1a \
@@ -42,7 +42,7 @@ docker run -d --name dd-agent \
 -v /var/lib/docker/containers:/var/lib/docker/containers:ro \
 gcr.io/datadoghq/agent:7
 ```
-Explaining this script: 
+#### Explaining this script: 
 
         a.  docker run \: Docker command to instruct docker to build a container with the steps below. More info https://docs.docker.com/engine/reference/run/  https://docs.datadoghq.com/containers/docker/?tab=standard 
         
