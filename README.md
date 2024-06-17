@@ -49,22 +49,22 @@ gcr.io/datadoghq/agent:7
 ```
 #### Script breakdown: 
 
-a.  **docker run** \: Docker command to instruct docker to build a container with the steps below: 
+a.  **docker run \**: Docker command to instruct docker to build a container with the steps below: 
 https://docs.docker.com/engine/reference/run/  
 https://docs.datadoghq.com/containers/docker/?tab=standard 
 
         
 b. Setting the following environment to define the DD docker agent configuration:
 
-***-e DD_API_KEY=<your_DD_api_key> \***: API key. https://docs.datadoghq.com/containers/docker/?tab=standard#global-options 
+**-e DD_API_KEY=<your_DD_api_key> \**: API key. https://docs.datadoghq.com/containers/docker/?tab=standard#global-options 
            
-***-e DD_SITE="datadoghq.com" \*** Defining the site parameter. Common signs of this being incorrect are invalid API Key errors: https://docs.datadoghq.com/getting_started/site/
+**-e DD_SITE="datadoghq.com" \** Defining the site parameter. Common signs of this being incorrect are invalid API Key errors: https://docs.datadoghq.com/getting_started/site/
            
-***-e DD_LOGS_ENABLED=true \***: Enabling Log Collection for the container agent: https://docs.datadoghq.com/containers/docker/log/?tab=containerinstallation
+**-e DD_LOGS_ENABLED=true \**: Enabling Log Collection for the container agent: https://docs.datadoghq.com/containers/docker/log/?tab=containerinstallation
            
-***-e DD_LOGS_CONFIG_CONTAINER_COLLECT_ALL=true \***: Asking the DD docker agent to collect logs from other containers on the Docker Desktop host. https://docs.datadoghq.com/containers/docker/?tab=standard#optional-collection-agents 
+**-e DD_LOGS_CONFIG_CONTAINER_COLLECT_ALL=true \**: Asking the DD docker agent to collect logs from other containers on the Docker Desktop host. https://docs.datadoghq.com/containers/docker/?tab=standard#optional-collection-agents 
            
-***-e DD_PROCESS_CONFIG_PROCESS_COLLECTION_ENABLED=true \***: Enabling Live Process Monitoring on the container agent: https://docs.datadoghq.com/infrastructure/process/?tab=docker#installation
+**-e DD_PROCESS_CONFIG_PROCESS_COLLECTION_ENABLED=true \**: Enabling Live Process Monitoring on the container agent: https://docs.datadoghq.com/infrastructure/process/?tab=docker#installation
 
            
 c. Setting the volumes where the DD docker agent will be installed in the container
