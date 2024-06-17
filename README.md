@@ -95,11 +95,47 @@ sudo docker exec -it <CONTAINER_ID_OR_NAME> agent status
 ```
 Returns status output of Agent
 
+### Quick Autodiscovery Example:
 
-## Helpful Troubleshooting Tips and Resources
+We'll be using redis for this example: https://hub.docker.com/_/redis
 
-a. Step 2 from above. Make sure Agent container is deployed and in running state.
-b. 
+Pull redis image:
+```
+docker pull redis
+```
+
+Verify image with below:
+```
+docker images
+```
+You should see an image name referencing redis in the output
+
+Start the instance:
+```
+docker run --name some-redis -d redis
+```
+Then run docker ps to ensure the container is up and running.
+
+From there we should be able to observe that the redis container is being automatically discovered by the Docker Agent host. Additionally, you'll see where the redis integration is automatically enabled, as Redis is one of our Autodiscovered integrations: https://docs.datadoghq.com/containers/guide/auto_conf/?tab=datadogoperator#pagetitle
+
+
+
+### Next Steps For Further Enablement:
+
+Docker Compose and The Agent: https://docs.datadoghq.com/containers/guide/compose-and-the-datadog-agent/
+
+Docker Compose Deep Dive: https://drive.google.com/file/d/1PjldKLii-9Y-81FE3za2TBHYVQbpxTbg/view
+
+Docker with APM: https://docs.datadoghq.com/containers/docker/apm/?tab=linux
+
+Docker Swarm: https://github.com/john-reiner/datadog-swarm
+
+Docker with DogStatsD: https://datadoghq.atlassian.net/wiki/x/L4LOt
+
+
+
+
+
 
 
 
