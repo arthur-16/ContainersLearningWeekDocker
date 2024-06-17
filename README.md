@@ -21,9 +21,9 @@ We'll be downloading Docker Desktop
 - A working terminal with cURL installed
 
 
-### Deploying the Docker Agent
+## Deploying the Docker Agent
 
-## Step 1: Installing the Docker Agent
+### Step 1: Installing the Docker Agent
 
 Reference: https://app.datadoghq.com/account/settings/agent/latest?platform=docker
 
@@ -43,7 +43,7 @@ docker run -d --name dd-agent \
 gcr.io/datadoghq/agent:7
 ```
 
-## Step 2: Verify Agent Is Running Successfully
+### Step 2: Verify Agent Is Running Successfully
 
 Confirm Agent container is running:
 ```
