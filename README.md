@@ -44,7 +44,9 @@ gcr.io/datadoghq/agent:7
 ```
 #### Script breakdown: 
 
-a.  docker run \: Docker command to instruct docker to build a container with the steps below. More info https://docs.docker.com/engine/reference/run/  https://docs.datadoghq.com/containers/docker/?tab=standard 
+a.  docker run \: Docker command to instruct docker to build a container with the steps below: 
+https://docs.docker.com/engine/reference/run/  
+https://docs.datadoghq.com/containers/docker/?tab=standard 
 
         
 b. Setting the following environment to define the DD docker agent configuration:
