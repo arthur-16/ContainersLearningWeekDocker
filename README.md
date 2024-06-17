@@ -45,12 +45,14 @@ gcr.io/datadoghq/agent:7
 Explaining this script: 
 
         a.  docker run \: Docker command to instruct docker to build a container with the steps below. More info https://docs.docker.com/engine/reference/run/  https://docs.datadoghq.com/containers/docker/?tab=standard 
+        
         b. Setting the following environment to define the DD docker agent configuration:
            -e DD_API_KEY=<your_DD_api_key> \: API key. https://docs.datadoghq.com/containers/docker/?tab=standard#global-options 
            -e DD_SITE="datadoghq.com" \ Defining the site parameter. Common signs of this being incorrect are invalid API Key errors: https://docs.datadoghq.com/getting_started/site/
            -e DD_LOGS_ENABLED=true \: Enabling Log Collection for the container agent: https://docs.datadoghq.com/containers/docker/log/?tab=containerinstallation
            -e DD_LOGS_CONFIG_CONTAINER_COLLECT_ALL=true \: Asking the DD docker agent to collect logs from other containers on the Docker Desktop host. https://docs.datadoghq.com/containers/docker/?tab=standard#optional-collection-agents 
            -e DD_PROCESS_CONFIG_PROCESS_COLLECTION_ENABLED=true \: Enabling Live Process Monitoring on the container agent: https://docs.datadoghq.com/infrastructure/process/?tab=docker#installation
+           
         c. Setting the volumes where the DD docker agent will be installed in the container
             -v /etc/passwd:/etc/passwd:ro \
             -v /var/run/docker.sock:/var/run/docker.sock:ro \
@@ -58,8 +60,10 @@ Explaining this script:
             -v /proc/:/host/proc/:ro \
             -v /opt/datadog-agent/run:/opt/datadog-agent/run:rw \
             -v /sys/fs/cgroup/:/host/sys/fs/cgroup:ro \
+            
         d. --name datadog-agent \: Setting container name
-        f. gcr.io/datadoghq/agent:latest: Defining image and version to use. https://console.cloud.google.com/gcr/images/datadoghq/GLOBAL/agent (this is storage in google cloud) you can use this image as well https://hub.docker.com/r/datadog/agent 
+        
+        f. gcr.io/datadoghq/agent:latest: Defining image and version to use. Default reference: https://hub.docker.com/r/datadog/agent 
 
 ### Step 2: Verify Agent Is Running Successfully
 
