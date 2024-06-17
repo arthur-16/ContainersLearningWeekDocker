@@ -79,20 +79,28 @@ f. gcr.io/datadoghq/agent:latest: Defining image and version to use. Default ref
 
 ### Step 2: Verify Agent Is Running Successfully
 
-Confirm Agent container is running:
+Confirm Agent container is running with the following command:
 ```
 docker ps
 ```
+Command should show an output similar to below, indicating Agent container is actively running:
+```
+CONTAINER ID   IMAGE                      COMMAND                CREATED          STATUS                    PORTS                NAMES
+629a8eda38f8   gcr.io/datadoghq/agent:7   "/bin/entrypoint.sh"   27 minutes ago   Up 27 minutes (healthy)   8125/udp, 8126/tcp   dd-agent
+```
 
 Agent status:
-
 ```
 sudo docker exec -it <CONTAINER_ID_OR_NAME> agent status
 ```
+Returns status output of Agent
 
 
 ## Helpful Troubleshooting Tips and Resources
 
-Step 2 from above. Make sure Agent container is deployed and in running state.
+a. Step 2 from above. Make sure Agent container is deployed and in running state.
+b. 
+
+
 
 
