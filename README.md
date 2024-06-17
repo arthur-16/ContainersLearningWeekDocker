@@ -56,3 +56,9 @@ Agent status:
 sudo docker exec -it <CONTAINER_ID_OR_NAME> agent status
 ```
 
+
+## Helpful Troubleshooting Steps and Resources
+
+Step 2 from above. Make sure Agent container is deployed and in running state.
+
+
