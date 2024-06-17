@@ -77,10 +77,10 @@ c. Setting the volumes where the DD docker agent will be installed in the contai
             -v /sys/fs/cgroup/:/host/sys/fs/cgroup:ro \
 ```
             
-d. ***--name datadog-agent \***: Setting container name
+d. **--name datadog-agent \:** Setting container name
 
         
-f. ***gcr.io/datadoghq/agent:7***: Defining image and version to use. Default reference: https://hub.docker.com/r/datadog/agent 
+f. **gcr.io/datadoghq/agent:7:** Defining image and version to use. Default reference: https://hub.docker.com/r/datadog/agent 
 
 ### Step 2: Verify Agent Is Running Successfully
 
