@@ -100,6 +100,8 @@ sudo docker exec -it <CONTAINER_ID_OR_NAME> agent status
 ```
 Returns status output of Agent
 
+Reference: https://docs.datadoghq.com/agent/configuration/agent-commands/?tab=agentv6v7
+
 ### Quick Autodiscovery Example:
 
 We'll be using redis for this example: https://hub.docker.com/_/redis
@@ -137,6 +139,8 @@ Docker Swarm: https://github.com/john-reiner/datadog-swarm
 
 Docker with DogStatsD: https://datadoghq.atlassian.net/wiki/x/L4LOt
 
+Docker Glossary: https://docs.docker.com/glossary/
+
 
 ### Quick Troubleshooting Resources
 
@@ -153,8 +157,10 @@ Docker inspect provides detailed information on constructs controlled by Docker.
 docker exec -it dd-agent agent flare
 ```
 
-If you encounter a Docker Agent ticket over chat:
-The docker run ... , docker-compose file, DockerFile, or details for whatever other tool used to start the Agent container. A docker inspect <Agent Container> would also be helpful.
+#### If you encounter a Docker Agent ticket over chat (these would likely be first steps for tickets you inherit as well):
+For Docker Agent configs, collect the docker run ... , docker-compose file, DockerFile, or details for whatever other tool used to start the Agent container. A docker inspect <Agent Container> would also be helpful.
+
+For Agent diagnostics, we'll need an Agent Flare from the instance in question. In Docker, ECS/EC2, and Kubernetes - It's the responsibility of the Agent pod/container on the same node as the monitored container, task, pod to discover that entity and monitor it. So you may ask “Can you please send us a flare from the Agent container on the same host as the (EXAMPLE) container you want monitored”. In general gathering this information with debug level logging is going to be the most helpful. This will depend of course on the problem presented, but if possible: re-deploying the Agent with debug logging enabled, letting the Agent encounter the problem, and then sending the flare, will be the most helpful. This may require taking it offline if it takes ~20+ minutes for the problem to occur.
 
 Full reference here: https://datadoghq.atlassian.net/wiki/spaces/TS/pages/328439533/Zendesk+Chat+Information+Collecting+Questions+to+ask#Containers
 
