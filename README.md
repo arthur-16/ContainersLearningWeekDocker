@@ -1,5 +1,10 @@
 # Container Learning Week - Docker Basics
 
+## What is Docker?
+Docker is an open application development framework that’s designed to benefit DevOps and developers. Using Docker, developers can easily build, pack, ship, and run applications as lightweight, portable, self-sufficient containers, which can run virtually anywhere.
+
+
+
 ## Prerequisites:
 
 ### Datadog Sandbox Account
@@ -132,6 +137,24 @@ Docker Swarm: https://github.com/john-reiner/datadog-swarm
 
 Docker with DogStatsD: https://datadoghq.atlassian.net/wiki/x/L4LOt
 
+
+### Quick Troubleshooting Resources
+
+Docker inspect:
+```
+docker inspect <container_id>
+```
+Docker inspect provides detailed information on constructs controlled by Docker. By default, docker inspect will render results in a JSON array.
+
+Gather Agent Flare
+```
+docker exec -it dd-agent agent flare
+```
+
+If you encounter a Docker Agent ticket over chat:
+The docker run ... , docker-compose file, or details for whatever other tool used to start the Agent container. A docker inspect <Agent Container> would also be helpful.
+
+Full reference here: https://datadoghq.atlassian.net/wiki/spaces/TS/pages/328439533/Zendesk+Chat+Information+Collecting+Questions+to+ask#Containers
 
 
 
